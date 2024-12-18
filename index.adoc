@@ -2,7 +2,30 @@
 :doctype: book
 :toc: left
 :toclevels: 3
+:stylesheet: styles.css
 
-== Introduction
+== Заголовок 1
 
-Welcome to my static site generated with Asciidoctor and GitHub Pages!
+Какой-то текст
+
+== API документация
+
+++++
+<div id="swagger-ui"></div>
+<script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script>
+<script src="https://unpkg.com/swagger-ui-dist/swagger-ui-standalone-preset.js"></script>
+<script>
+  window.onload = function() {
+    const ui = SwaggerUIBundle({
+      url: "/openapi.yaml",
+      dom_id: '#swagger-ui',
+      presets: [
+        SwaggerUIBundle.presets.apis,
+        SwaggerUIStandalonePreset
+      ],
+      layout: "StandaloneLayout"
+    })
+    window.ui = ui
+  }
+</script>
+++++
